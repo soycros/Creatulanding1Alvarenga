@@ -1,0 +1,132 @@
+/* Definición de colores pastel */
+:root {
+  --color-fondo: #f7f8fa; /* Gris claro */
+  --color-primario: #ffb6b9; /* Rosa pastel */
+  --color-secundario: #c6e2ff; /* Azul pastel */
+  --color-texto: #333333; /* Gris oscuro */
+  --color-acento: #ffe4b5; /* Amarillo pastel */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  margin: 0;
+  padding: 0;
+}
+
+/* Títulos */
+h1, h2, h3, h4 {
+  color: var(--color-primario);
+}
+
+/* Estilos generales para enlaces */
+a {
+  color: var(--color-secundario);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Contenedor principal */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--color-fondo);
+  box-shadow: 0 4px 8px rgba(214, 0, 0, 0.1);
+}
+
+/* Barra de navegación */
+.navbar {
+  background-color: var(--color-primario);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: var(--color-acento);
+}
+
+/* Lista de elementos (productos) */
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Tarjetas de productos */
+.item-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.item-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-secundario);
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Barra de búsqueda */
+.search-bar {
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Ajuste para el carrito */
+.cart-widget {
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Estilo del saludo en el contenedor de productos */
+.greeting {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--color-secundario);
+  margin-bottom: 20px;
+  text-align: center;
+}
