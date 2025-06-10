@@ -1,6 +1,5 @@
-import React from 'react';  // Asegúrate de agregar esta línea
-// El resto de tu código
-
+import React from 'react';
+import { Link } from 'react-router-dom'; // ✅ Import necesario
 import CartWidget from './CartWidget';
 
 function NavBar() {
@@ -8,9 +7,10 @@ function NavBar() {
     <nav style={styles.nav}>
       <h1 style={styles.logo}>Crissacio Shop</h1>
       <ul style={styles.links}>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Productos</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><Link to="/">Inicio</Link></li>
+        <li><Link to="/category/electronica">Electrónica</Link></li>
+        <li><Link to="/category/ropa">Ropa</Link></li>
+        <li><Link to="/category/hogar">Hogar</Link></li>
       </ul>
       <CartWidget />
     </nav>
