@@ -1,11 +1,19 @@
-import React from 'react';  // Asegúrate de agregar esta línea
-// El resto de tu código
+import React, { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 
 function CartWidget() {
+  const { totalItems } = useContext(CartContext);
+
   return (
-    <div style={styles.cart}>
-      🛒<span style={styles.count}>3</span>
-    </div>
+    <Link to="/cart" style={{ textDecoration: 'none' }}>
+      <div style={styles.cart}>
+        🛒
+        {totalItems() > 0 && (
+          <span style={styles.count}>{totalItems()}</span>
+        )}
+      </div>
+    </Link>
   );
 }
 
@@ -13,6 +21,8 @@ const styles = {
   cart: {
     fontSize: '1.5rem',
     position: 'relative',
+    cursor: 'pointer',
+    color: 'black',
   },
   count: {
     position: 'absolute',
