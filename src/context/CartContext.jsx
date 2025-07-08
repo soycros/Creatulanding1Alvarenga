@@ -1,20 +1,10 @@
-<<<<<<< HEAD
-import React, { createContext, useState } from 'react';
-=======
 import React, { createContext, useState, useEffect } from 'react';
->>>>>>> a46b95a (Mejoras finales)
 
 export const CartContext = createContext();
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-<<<<<<< HEAD
-  const addItem = (item, cantidad) => {
-    const exist = cart.find(p => p.id === item.id);
-    if (exist) {
-      setCart(cart.map(p => p.id === item.id ? { ...p, cantidad: p.cantidad + cantidad } : p));
-=======
   // 🔁 Cargar carrito desde localStorage al iniciar
   useEffect(() => {
     const storedCart = localStorage.getItem('cart');
@@ -30,7 +20,7 @@ export function CartProvider({ children }) {
 
   // ➕ Agregar producto al carrito
   const addItem = (item, cantidad) => {
-    if (cantidad <= 0) return; // Evita cantidades inválidas
+    if (cantidad <= 0) return;
 
     const exist = cart.find(p => p.id === item.id);
     if (exist) {
@@ -39,21 +29,11 @@ export function CartProvider({ children }) {
           ? { ...p, cantidad: p.cantidad + cantidad }
           : p
       ));
->>>>>>> a46b95a (Mejoras finales)
     } else {
       setCart([...cart, { ...item, cantidad }]);
     }
   };
 
-<<<<<<< HEAD
-  const clearCart = () => setCart([]);
-  const removeItem = (id) => setCart(cart.filter(p => p.id !== id));
-  const totalItems = () => cart.reduce((acc, p) => acc + p.cantidad, 0);
-  const totalPrice = () => cart.reduce((acc, p) => acc + p.price * p.cantidad, 0);
-
-  return (
-    <CartContext.Provider value={{ cart, addItem, clearCart, removeItem, totalItems, totalPrice }}>
-=======
   // 🗑️ Vaciar carrito
   const clearCart = () => setCart([]);
 
@@ -77,7 +57,6 @@ export function CartProvider({ children }) {
         totalPrice
       }}
     >
->>>>>>> a46b95a (Mejoras finales)
       {children}
     </CartContext.Provider>
   );

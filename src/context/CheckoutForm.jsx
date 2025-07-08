@@ -7,27 +7,17 @@ export default function CheckoutForm() {
   const { cart, totalCart, clearCart } = useContext(CartContext);
   const [orderId, setOrderId] = useState(null);
   const [loading, setLoading] = useState(false);
-<<<<<<< HEAD
-
-  const [form, setForm] = useState({ name: '', email: '', phone: '' });
-=======
   const [errorMsg, setErrorMsg] = useState('');
-
   const [form, setForm] = useState({
     name: '',
     email: '',
     phone: ''
   });
->>>>>>> a46b95a (Mejoras finales)
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-<<<<<<< HEAD
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-=======
   const validateForm = () => {
     if (!form.name || !form.email || !form.phone) {
       setErrorMsg('Por favor completá todos los campos.');
@@ -47,7 +37,6 @@ export default function CheckoutForm() {
 
     if (!validateForm()) return;
 
->>>>>>> a46b95a (Mejoras finales)
     setLoading(true);
 
     const order = {
@@ -68,30 +57,12 @@ export default function CheckoutForm() {
       clearCart();
     } catch (error) {
       console.error('Error al generar la orden', error);
-<<<<<<< HEAD
-=======
       setErrorMsg('Hubo un problema al generar la orden. Intentá de nuevo.');
->>>>>>> a46b95a (Mejoras finales)
     } finally {
       setLoading(false);
     }
   };
 
-<<<<<<< HEAD
-  if (loading) return <p>Generando tu orden...</p>;
-
-  if (orderId) {
-    return <p>✅ ¡Compra realizada! Tu número de orden es: <strong>{orderId}</strong></p>;
-  }
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <h2>Checkout</h2>
-      <input type="text" name="name" placeholder="Nombre" value={form.name} onChange={handleChange} required />
-      <input type="email" name="email" placeholder="Correo" value={form.email} onChange={handleChange} required />
-      <input type="tel" name="phone" placeholder="Teléfono" value={form.phone} onChange={handleChange} required />
-      <button type="submit">🧾 Confirmar compra</button>
-=======
   if (loading) return <p>🕐 Generando tu orden...</p>;
 
   if (orderId) {
@@ -104,11 +75,18 @@ export default function CheckoutForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: '2rem auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    <form
+      onSubmit={handleSubmit}
+      style={{
+        maxWidth: '400px',
+        margin: '2rem auto',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1rem'
+      }}
+    >
       <h2>Checkout</h2>
-
       {errorMsg && <p style={{ color: 'red' }}>{errorMsg}</p>}
-
       <input
         type="text"
         name="name"
@@ -136,7 +114,6 @@ export default function CheckoutForm() {
       <button type="submit" disabled={loading}>
         🧾 Confirmar compra
       </button>
->>>>>>> a46b95a (Mejoras finales)
     </form>
   );
 }
