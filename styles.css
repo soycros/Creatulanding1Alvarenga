@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Definición de colores pastel */
 :root {
   --color-fondo: #f7f8fa; /* Gris claro */
@@ -7,6 +8,19 @@
   --color-acento: #ffe4b5; /* Amarillo pastel */
 }
 
+=======
+/* 🎨 Paleta pastel */
+:root {
+  --color-fondo: #f7f8fa;
+  --color-primario: #ffb6b9;
+  --color-secundario: #c6e2ff;
+  --color-texto: #333333;
+  --color-acento: #ffe4b5;
+  --color-blanco: #ffffff;
+}
+
+/* ✨ Reset y cuerpo */
+>>>>>>> a46b95a (Mejoras finales)
 body {
   font-family: 'Arial', sans-serif;
   background-color: var(--color-fondo);
@@ -15,21 +29,35 @@ body {
   padding: 0;
 }
 
+<<<<<<< HEAD
 /* Títulos */
 h1, h2, h3, h4 {
   color: var(--color-primario);
 }
 
 /* Estilos generales para enlaces */
+=======
+/* 🧠 Tipografías */
+h1, h2, h3, h4 {
+  color: var(--color-primario);
+  margin-top: 0;
+}
+
+/* 🔗 Enlaces */
+>>>>>>> a46b95a (Mejoras finales)
 a {
   color: var(--color-secundario);
   text-decoration: none;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> a46b95a (Mejoras finales)
 a:hover {
   text-decoration: underline;
 }
 
+<<<<<<< HEAD
 /* Contenedor principal */
 .container {
   width: 80%;
@@ -43,10 +71,27 @@ a:hover {
 .navbar {
   background-color: var(--color-primario);
   padding: 10px 20px;
+=======
+/* 🧱 Contenedor principal */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--color-blanco);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 🧭 Navbar */
+.navbar {
+  background-color: var(--color-primario);
+  padding: 12px 24px;
+>>>>>>> a46b95a (Mejoras finales)
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+<<<<<<< HEAD
 
 .navbar a {
   color: white;
@@ -55,10 +100,19 @@ a:hover {
   transition: background-color 0.3s;
 }
 
+=======
+.navbar a {
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+>>>>>>> a46b95a (Mejoras finales)
 .navbar a:hover {
   background-color: var(--color-acento);
 }
 
+<<<<<<< HEAD
 /* Lista de elementos (productos) */
 .item-list {
   display: grid;
@@ -116,13 +170,93 @@ footer a:hover {
 }
 
 /* Ajuste para el carrito */
+=======
+/* 🛍️ Grilla de productos */
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+  padding-bottom: 2rem;
+}
+
+/* 🧺 Tarjeta individual */
+.item-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+.item-card:hover {
+  transform: translateY(-8px);
+}
+.item-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.item-card p {
+  margin: 0.5rem 0;
+}
+
+/* 📥 Formulario de checkout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+form button {
+  background-color: var(--color-primario);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+form button:hover {
+  background-color: var(--color-secundario);
+}
+
+/* 🛒 Widget del carrito */
+>>>>>>> a46b95a (Mejoras finales)
 .cart-widget {
   font-size: 24px;
   cursor: pointer;
   color: white;
+<<<<<<< HEAD
 }
 
 /* Estilo del saludo en el contenedor de productos */
+=======
+  position: relative;
+}
+.cart-widget::after {
+  content: attr(data-count);
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: var(--color-acento);
+  color: #333;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* 🧾 Mensaje de saludo */
+>>>>>>> a46b95a (Mejoras finales)
 .greeting {
   font-size: 28px;
   font-weight: bold;
@@ -130,3 +264,37 @@ footer a:hover {
   margin-bottom: 20px;
   text-align: center;
 }
+<<<<<<< HEAD
+=======
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .item-list {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    width: 95%;
+  }
+}
+
+/* 🔚 Footer */
+footer {
+  background-color: var(--color-secundario);
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
+footer a {
+  color: white;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+>>>>>>> a46b95a (Mejoras finales)
